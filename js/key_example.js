@@ -1,0 +1,1 @@
+Bmob.initialize("Your Secret Key", "Your API PIN");

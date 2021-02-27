@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>SenaKernel 设备绑定&激活</title>
+  <link type="text/css" rel="stylesheet" href="css/mdui.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="css/custom.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height" id="left-drawer">
+  <nav role="navigation">
+    <ul class="mdui-list" mdui-collapse="{accordion: true}">
+      <a href="?#home" onclick="location='?#home';location.reload()">
+        <li class="mdui-list-item mdui-ripple ">
+          <i class="mdui-icon material-icons mdui-list-item-icon mdui-text-color-blue-grey">&#xe1b0;</i>
+          <div class="mdui-list-item-content">绑定设备</div>
+        </li>
+      </a>
+      <a href="?#aboutgm" onclick="location='#about';location.reload()">
+        <li class="mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue-grey">people</i>
+          <div class="mdui-list-item-content">关于</div>
+        </li>
+      </a>
+    </ul>
+  </nav>
+</div>
+
+<body>
+  <script type="text/javascript" src="js/mdui.js"></script>
+  <script type="text/javascript" src="js/bmob.min.js"></script>
+  <div class="mdui-appbar mdui-shadow-3 mdui-center bar-width"">
+    <div class=" mdui-toolbar mdui-toolbar-space mdui-color-white mdui-gt-only-toolbar-fix">
+    <button class="mdui-btn mdui-btn-icon" id="menu" mdui-drawer="{target:'#left-drawer',overlay:true,swipe:true}">
+      <i class="mdui-icon material-icons">menu</i>
+    </button>
+    <span class="mdui-dialog-title">SenaKernel 绑定设备</span>
+  </div>
+  </div>
+  <div class="mdui-card mdui-center card-width" style="margin-top: 20px">
+    <div class="mdui-card-primary">
+      <div class="mdui-card-primary-title">填写信息</div>
+      <div class="mdui-card-primary-subtitle">
+        请选择支付方式:<br />
+        <div id="alipay" class="mdui-chip mdui-shadow-2 mdui-color-pink" isChecked="true">
+          <span class="mdui-chip-title">Alipay - 支付宝</span>
+        </div>
+        <div id="wechatpay" class="mdui-chip " isChecked="false">
+          <span class="mdui-chip-title">WeChat Pay - 微信支付</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdui-card-content">
+      <div class="mdui-textfield mdui-textfield-floating-label" style="width: 95%">
+        <i class="mdui-icon material-icons">fingerprint</i>
+        <label class="mdui-textfield-label">SocID</label>
+        <input id="socid1" class="mdui-textfield-input" type="text" />
+        <span class="mdui-textfield-helper">不知道SocID?点此<a href="mirrors.kiriki.top/SocID-Reader.apk" class="mdui-text-color-pink">下载SocID
+            Reader</a></span>
+      </div>
+      <div class="mdui-textfield mdui-textfield-floating-label" style="width: 95%">
+        <i class="mdui-icon material-icons">payment</i>
+        <label class="mdui-textfield-label">订单号</label>
+        <input id="payment_code" class="mdui-textfield-input" type="text" pattern="^.*(?=.{12,}).*$" required />
+        <div class="mdui-textfield-error">格式错误，订单号为12位</div>
+        <div class="mdui-textfield-helper">请输入12位订单号</div>
+      </div>
+    </div>
+    <div class="mdui-card-actions mdui-text-right mdui-img-rounded">
+      <button id="submit" class="mdui-btn mdui-ripple mdui-text-capitalize" type="submit" onClick="submit()">
+        提交
+      </button>
+    </div>
+  </div>
+  <div class="mdui-card mdui-center card-width" style="margin-top: 20px;margin-bottom: 100px;">
+    <div class="mdui-card-primary">
+      <div class="mdui-card-primary-title">查询激活码</div>
+    </div>
+    <div class="mdui-card-content">
+      <div class="mdui-textfield mdui-textfield-floating-label" style="width: 95%">
+        <i class="mdui-icon material-icons">fingerprint</i>
+        <label class="mdui-textfield-label">SocID</label>
+        <input id="socid2" class="mdui-textfield-input" type="text" />
+      </div>
+      <div class="mdui-textfield mdui-textfield-floating-label" style="width: 95%">
+        <i class="mdui-icon material-icons">code</i>
+        <label class="mdui-textfield-label">激活码</label>
+        <input id="active_code" class="mdui-textfield-input" type="text" value="激活码" disabled />
+      </div>
+    </div>
+    <div class="mdui-card-actions mdui-text-right mdui-img-rounded">
+      <button id="query" class="mdui-btn mdui-ripple mdui-text-capitalize" type="submit" onClick="query_code()">
+        查询
+      </button>
+    </div>
+  </div>
+  <footer>
+    <div style="position: fixed;bottom:0;width: 100%;">
+      <div class="mdui-card mdui-ripple mdui-center mdui-hoverable bar-widthstyle=" margin-bottom: 20px">
+        <div class="mdui-card-content">
+          <div class="footer-copyright" style="text-align: center">
+            Copyright © 2019 - 2020 kmou424 All rights reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="js/key.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+.card-width {
+    width: 50%;
+}
+
+.bar-width {
+    width: 55%;
+}
+
+@media (max-width: 599px) {
+    .card-width {
+        width: 90%
+    }
+    .bar-width {
+        width: 95%
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+    .card-width {
+        width: 80%
+    }
+    .bar-width {
+        width: 85%
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .card-width {
+        width: 70%
+    }
+    .bar-width {
+        width: 75%
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .card-width {
+        width: 60%
+    }
+    .bar-width {
+        width: 65%
+    }
+}
